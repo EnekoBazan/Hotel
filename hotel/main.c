@@ -4,7 +4,8 @@ int main(void){
 	int seleccion;
 
 	printf("== Menu Principal==\n");
-	printf("1- Iniciar Sesion\n");
+	printf("1- Iniciar Sesion Administrador\n");
+	printf("2- Iniciar Sesion Usuario\n");
 	printf("2- Registrarse \n");
 	printf("3- Salir \n");
 
@@ -17,7 +18,7 @@ int main(void){
 	}
 }
 
-void iniciarSesion(){
+void iniciarSesionUsuario(){
 	int seleccion;
 
 
