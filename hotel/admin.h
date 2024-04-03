@@ -1,10 +1,3 @@
-/*
- * admin.h
- *
- *  Created on: 3 abr 2024
- *      Author: Eneko
- */
-
 #ifndef ADMIN_H_
 #define ADMIN_H_
 
