@@ -1,3 +1,4 @@
+
 #include "admin.h"
 
 void iniciarAdmin(sqlite3* bd)
