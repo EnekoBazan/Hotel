@@ -33,7 +33,7 @@ void anyadirHabitaciones(Habitacion* Habitaciones, int tamanyoHabitaciones){
 
 	char estado2[] = "DISPONIBLE";
 
-	sqlite3 *db;
+//	sqlite3 *db;
 
 //	printf("Database opened\n") ;
 //

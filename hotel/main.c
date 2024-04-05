@@ -21,15 +21,15 @@ int main(void){
 
 void iniciarSesionUsuario(){
 	char nombreUsuario;
-	char contraseña;
+	char contrasena;
 
 	printf("== Iniciar Sesion==\n");
 	printf("Introduce el nombre de usuario :\n");
 	fflush(stdout);
 	scanf("%s",&nombreUsuario);
-	printf("Introduce la contraseña:n");
+	printf("Introduce la contrasena:n");
 	fflush(stdout);
-	scanf("%s",&contraseña);
+	scanf("%s",&contrasena);
 	printf("0. Atras \n");
 
 	deustoBooking();
@@ -40,7 +40,7 @@ void iniciarSesionUsuario(){
 void registrarse(){
 	char nombre;
 	char nombreUsuario;
-	char contraseña;
+	char contrasena;
 	int numeroTelefono;
 	char direccionResidencia;
 
@@ -51,9 +51,9 @@ void registrarse(){
 	printf("Introduce el nombre de usuario :\n");
 	fflush(stdout);
 	scanf("%s",&nombreUsuario);
-	printf("Introduce la contraseña:");
+	printf("Introduce la contrasena:");
 	fflush(stdout);
-	scanf("%s",&contraseña);
+	scanf("%s",&contrasena);
 	printf("Introduce el numero de telefono:");
 	fflush(stdout);
 	scanf("%d",&numeroTelefono);

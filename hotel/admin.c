@@ -3,7 +3,7 @@
 
 void iniciarAdmin(sqlite3* bd)
 {
-	char nombre;
+	char* nombre;
 	char* aux= (char*)malloc(sizeof(char)*100);
 	printf("Nombre: ");
 	fflush(stdout);
