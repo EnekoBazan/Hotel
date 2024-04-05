@@ -26,7 +26,10 @@ int verificarUsuario(char*, char*, sqlite3*);
 int cargarHoteles(sqlite3* bd);
 int anadirHotel(char* nombre, int estrellas, char* pais, char* ciudad, int num_piso, int num_indiv, int num_dobles, int num_suite, sqlite3* bd);
 int eliminarHotel(int id, sqlite3* bd);
-
+//Habitaciones
+int cargarHabitaciones(sqlite3* bd);
+int anadirHabitacion(int id, char* tipo, int capacidad, float precio, char* estado, sqlite3* bd);
+int eliminarHabitacion(int id, sqlite3* bd);
 //Reservas
 int cargarReservas(sqlite3* bd);
 int anadirReserva(int id, char* nombreHotel, char* fechaEntrada, char* fechaSalida ,sqlite3* bd);
