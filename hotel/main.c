@@ -1,33 +1,85 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include "admin.c"
+
 int main(void){
 
+	menuPrincipal();
+
+	return 0;
+}
+
+void menuPrincipal()
+{
 	int seleccion;
 
-	printf("== Menu Principal==\n");
-	printf("1- Iniciar Sesion Administrador\n");
-	printf("2- Iniciar Sesion Usuario\n");
-	printf("2- Registrarse \n");
-	printf("3- Salir \n");
+		printf("== Menu Principal==\n");
+		printf("1- Iniciar Sesion Administrador\n");
+		printf("2- Iniciar Sesion Usuario\n");
+		printf("2- Registrarse \n");
+		printf("3- Salir \n");
+		fflush(stdout);
+		scanf("%d",&seleccion);
+
+		switch(seleccion){
+
+	    case 1:
+	         iniciarSesionAdmin();
+	         break;
+	     case 2:
+	    	 iniciarSesionUsuario();
+	         break;
+	     case 3:
+	    	 registrarse();
+	         break;
+	     case 4:
+	         printf("Saliendo...\n");
+	         break;
+	     default:
+	         printf("Opción no válida\n");
+	         break;
+		}
+}
+
+void iniciarSesionAdmin()
+{
+	char nombreAdmin;
+	char* aux= (char*)malloc(sizeof(char)*100);
+
+	printf("== Iniciar Sesion administrador==\n");
+	printf("Introduce el nombre de administrador: ");
+	fflush(stdout);
+	scanf("%s",&nombreAdmin);
+	printf("Introduce la contrasena: ");
+	fflush(stdout);
+	scanf("%s",aux);
+
+	deustoBookingAdmin();
+
+}
+
+void deustoBookingAdmin(){
+	int seleccion;
+
+	printf("== Deusto Booking==\n");
+	printf("1-Buscar Hoteles\n");
+	printf("2-Hacer una reserva \n");
+	printf("3-Cancelar una reserva \n");
+	printf("4-Ver mis reservas\n");
+	printf("5-Cerrar Sesion \n");
 	fflush(stdout);
 	scanf("%d",&seleccion);
-
-	switch(seleccion){
-
-	case 1:
-		printf("==");
-	}
 }
 
 void iniciarSesionUsuario(){
 	char nombreUsuario;
 	char contrasena;
 
-	printf("== Iniciar Sesion==\n");
+	printf("== Iniciar Sesion usuario==\n");
 	printf("Introduce el nombre de usuario :\n");
 	fflush(stdout);
 	scanf("%s",&nombreUsuario);
-	printf("Introduce la contrasena:n");
+	printf("Introduce la contrasena:\n");
 	fflush(stdout);
 	scanf("%s",&contrasena);
 	printf("0. Atras \n");
