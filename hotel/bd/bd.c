@@ -7,6 +7,8 @@
 
 #include "bd.h"
 #include <stdlib.h>
+#include <string.h>
+#include <stdlib.h>
 
 // BD
 sqlite3* cargarBD() {

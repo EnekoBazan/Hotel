@@ -9,6 +9,10 @@
 #define BD_H_
 
 #include "sqlite3.h"
+#include "admin.h"
+#include "habitacion.h"
+#include "hotel.h"
+#include "usuario.h"
 #include <stdio.h>
 #include <string.h>
 
