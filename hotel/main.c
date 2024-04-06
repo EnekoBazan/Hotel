@@ -128,6 +128,30 @@ void deustoBooking(){
 	printf("5-Cerrar Sesion \n");
 	fflush(stdout);
 	scanf("%d",&seleccion);
+
+	switch(seleccion){
+
+		    case 1:
+		         //BuscarHoteles;
+		         break;
+		     case 2:
+		    	 reservar();
+		         break;
+		     case 3:
+		    	 cancerlarReserva();
+		         break;
+		     case 4:
+		    	 //Ver mis reservas
+		         printf("Saliendo...\n");
+		         break;
+		     case 5:
+		   		    menuPrincipal();
+		   		     printf("Saliendo...\n");
+		   		      break;
+		     default:
+		         printf("Opción no válida\n");
+		         break;
+			}
 }
 
 void reservar(){
