@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "Empleado.h"
-#include "../sqlite3.h"
+#include "sqlite3.h"
 
 
 void imprimirEmpleadoLargo(Empleado e){

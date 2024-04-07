@@ -1,7 +1,7 @@
 #ifndef EMPLEADO_H_
 #define EMPLEADO_H_
 
-#include "../sqlite3.h"
+#include "sqlite3.h"
 
 typedef struct{
 	int id;
