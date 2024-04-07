@@ -3,14 +3,17 @@
 
 typedef struct
 {
-
+	int id;
 	char* nombre;
 	char* apellido;
-	char* cotrasena;
-	int id;
 	char* email;
+	char* cotrasena;
+	int edad;
+	char* sexo;
+	int telefono;
 
 }Usuario;
 
+void imprimirUsuario(Usuario u);
 
 #endif /* USUARIO_H_ */
