@@ -63,10 +63,11 @@ void deustoBookingAdmin(){
 
 	printf("== Deusto Booking==\n");
 	printf("1-Buscar Hoteles\n");
-	printf("2-Hacer una reserva \n");
-	printf("3-Cancelar una reserva \n");
-	printf("4-Ver mis reservas\n");
-	printf("5-Cerrar Sesion \n");
+	printf("2-Borrar Hoteles \n");
+	printf("3-Buscar reservas\n");
+	printf("4-Cancelar una reserva \n");
+	printf("5-Buscar usuario\n");
+	printf("6-Cerrar Sesion \n");
 	fflush(stdout);
 	scanf("%d",&seleccion);
 }
@@ -138,7 +139,7 @@ void deustoBooking(){
 		    	 reservar();
 		         break;
 		     case 3:
-		    	 cancerlarReserva();
+		    	 cancelarReserva();
 		         break;
 		     case 4:
 		    	 //Ver mis reservas
