@@ -13,11 +13,11 @@ void menuPrincipal()
 {
 	int seleccion;
 
-		printf("== Menu Principal==\n");
+		printf("\n== Menu Principal==\n");
 		printf("1- Iniciar Sesion Administrador\n");
 		printf("2- Iniciar Sesion Usuario\n");
-		printf("2- Registrarse \n");
-		printf("3- Salir \n");
+		printf("3- Registrarse \n");
+		printf("4- Salir \n");
 		fflush(stdout);
 		scanf("%d",&seleccion);
 
@@ -84,9 +84,10 @@ void deustoBookingAdmin(){
 	scanf("%d",&seleccion);
 }
 
-void iniciarSesionUsuario(){
+void iniciarSesionUsuario(sqlite3* bd){
 	char nombreUsuario;
 	char contrasena;
+	int verificar;
 
 	printf("== Iniciar Sesion usuario==\n");
 	printf("Introduce el nombre de usuario :\n");
@@ -95,12 +96,23 @@ void iniciarSesionUsuario(){
 	printf("Introduce la contrasena:\n");
 	fflush(stdout);
 	scanf("%s",&contrasena);
-	printf("0. Atras \n");
+	//verificar = verificarUsuario(nombreUsuario,contrasena,bd);
+	//if(verificar == 1){
+		//deustoBooking();
+	//}else{
+		//printf("Usuario o contrasena no validos,vuelvelo a intentar o registrate\n");
+		//menuPrincipal();
+		//fflush(stdout);
+	}
 
-	deustoBooking();
+	deustoBooking(bd);
 
 
-}
+
+
+
+
+
 
 void registrarse(){
 	char nombre;
@@ -125,12 +137,12 @@ void registrarse(){
 	printf("Introduce la direccion de residencia:");
 	fflush(stdout);
 	scanf("%s",&direccionResidencia);
-	printf("0. Atras \n");
+
 
 }
 
 
-void deustoBooking(){
+void deustoBooking(sqlite3* bd){
 	int seleccion;
 
 	printf("== Deusto Booking==\n");
@@ -145,7 +157,7 @@ void deustoBooking(){
 	switch(seleccion){
 
 		    case 1:
-		         //BuscarHoteles;
+		         cargarHoteles(bd);
 		         break;
 		     case 2:
 		    	 reservar();
@@ -167,7 +179,7 @@ void deustoBooking(){
 			}
 }
 
-void reservar(){
+void reservar(sqlite3* bd){
 	char pais;
 	char hotel;
 	char ciudad;
@@ -176,6 +188,7 @@ void reservar(){
 	char fechaE;
 	char fechaS;
 	int numeroPersonas;
+	int atras;
 
 	printf("== Reservar==\n");
 	printf("Introduce el pais :\n");
@@ -202,7 +215,11 @@ void reservar(){
 	printf("Introduce el numero de personas:");
 	fflush(stdout);
 	scanf("%d",&numeroPersonas);
-	printf("0. Atras \n");
+	printf("Reserva Realizada\n");
+	fflush(stdout);
+	deustoBooking(bd);
+
+
 
 
 
