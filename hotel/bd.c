@@ -27,13 +27,13 @@ sqlite3* cerrarBD(sqlite3* bd) {
     return NULL;
 }
 
-int verificarAdmin(char* usuario, char* contrasena, sqlite3* bd) {
+int verificarAdmin(char* nombreAdmin, char* contrasena, sqlite3* bd) {
     sqlite3_stmt *stmt;
     const char *sql = "SELECT COUNT(*) FROM administradores WHERE usuario = ? AND contrasena = ?";
     int result = 0;
 
     if (sqlite3_prepare_v2(bd, sql, -1, &stmt, NULL) == SQLITE_OK) {
-        sqlite3_bind_text(stmt, 1, usuario, -1, SQLITE_STATIC);
+        sqlite3_bind_text(stmt, 1, nombreAdmin, -1, SQLITE_STATIC);
         sqlite3_bind_text(stmt, 2, contrasena, -1, SQLITE_STATIC);
 
         if (sqlite3_step(stmt) == SQLITE_ROW) {

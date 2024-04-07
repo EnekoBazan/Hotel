@@ -43,8 +43,9 @@ void menuPrincipal()
 
 void iniciarSesionAdmin()
 {
+	sqlite3 *db;
 	char nombreAdmin;
-	char* aux= (char*)malloc(sizeof(char)*100);
+	char contrasena;
 
 	printf("== Iniciar Sesion administrador==\n");
 	printf("Introduce el nombre de administrador: ");
@@ -52,9 +53,20 @@ void iniciarSesionAdmin()
 	scanf("%s",&nombreAdmin);
 	printf("Introduce la contrasena: ");
 	fflush(stdout);
-	scanf("%s",aux);
+	scanf("%s",contrasena);
 
-	deustoBookingAdmin();
+	  if (verificarAdmin(nombreAdmin, contrasena, db)) {
+
+		  printf("Inicio de sesion exitoso!\n");
+	      deustoBookingAdmin();
+
+	    } else {
+
+	    	printf("Nombre de administrador o contrasena incorrectos.\n");
+
+	    }
+
+	  sqlite3_close(db);
 
 }
 
