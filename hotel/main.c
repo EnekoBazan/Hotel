@@ -105,7 +105,7 @@ void iniciarSesionUsuario(sqlite3* bd){
 		//fflush(stdout);
 	}
 
-	deustoBooking(bd);
+
 
 
 
@@ -142,7 +142,7 @@ void registrarse(){
 }
 
 
-void deustoBooking(sqlite3* bd){
+void deustoBooking(){
 	int seleccion;
 
 	printf("== Deusto Booking==\n");
@@ -157,7 +157,7 @@ void deustoBooking(sqlite3* bd){
 	switch(seleccion){
 
 		    case 1:
-		         cargarHoteles(bd);
+		         //cargarHoteles();
 		         break;
 		     case 2:
 		    	 reservar();
