@@ -134,7 +134,7 @@ void registrarse(){
 }
 
 
-void deustoBooking(){
+void deustoBooking(sqlite3* db){
 	int seleccion;
 
 	printf("== Deusto Booking==\n");
@@ -149,7 +149,7 @@ void deustoBooking(){
 	switch(seleccion){
 
 		    case 1:
-		         //cargarHoteles();
+		         cargarHoteles(db);
 		         break;
 		     case 2:
 		    	 reservar();
