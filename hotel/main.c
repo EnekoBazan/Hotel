@@ -103,16 +103,8 @@ void iniciarSesionUsuario(sqlite3* bd){
 		//printf("Usuario o contrasena no validos,vuelvelo a intentar o registrate\n");
 		//menuPrincipal();
 		//fflush(stdout);
+	deustoBooking();
 	}
-
-
-
-
-
-
-
-
-
 
 void registrarse(){
 	char nombre;
