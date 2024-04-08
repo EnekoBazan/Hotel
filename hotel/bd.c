@@ -11,19 +11,28 @@
 #include <stdlib.h>
 
 // BD
+
 sqlite3* cargarBD() {
     sqlite3 *bd;
-    int rc = sqlite3_open("basededatos.sqbpro", &bd);
+    int rc = sqlite3_open("baseDeDatos.db", &bd);
     if (rc != SQLITE_OK) {
         fprintf(stderr, "Error al abrir la base de datos: %s\n", sqlite3_errmsg(bd));
         sqlite3_close(bd);
         return NULL;
+    } else {
+        printf("Base de datos abierta correctamente.\n");
     }
     return bd;
 }
 
+
 sqlite3* cerrarBD(sqlite3* bd) {
-    sqlite3_close(bd);
+    if (bd) {
+        sqlite3_close(bd);
+        printf("Base de datos cerrada correctamente.\n");
+    } else {
+        printf("No hay base de datos abierta para cerrar.\n");
+    }
     return NULL;
 }
 
@@ -46,12 +55,16 @@ int verificarAdmin(char* nombreAdmin, char* contrasena, sqlite3* bd) {
     return result;
 }
 
+
+
 int cargarUsuarios(sqlite3* bd) {
     sqlite3_stmt *stmt;
     const char *sql = "SELECT * FROM usuarios";
     int result = 0;
 
     if (sqlite3_prepare_v2(bd, sql, -1, &stmt, NULL) == SQLITE_OK) {
+        printf("Consulta preparada correctamente.\n");
+
         while (sqlite3_step(stmt) == SQLITE_ROW) {
             // Procesar cada fila de resultados aquí
             int id = sqlite3_column_int(stmt, 0);
@@ -66,6 +79,8 @@ int cargarUsuarios(sqlite3* bd) {
 
         sqlite3_finalize(stmt);
         result = 1; // Indicar que se cargaron usuarios exitosamente
+    } else {
+        fprintf(stderr, "Error al preparar la consulta: %s\n", sqlite3_errmsg(bd));
     }
 
     return result;

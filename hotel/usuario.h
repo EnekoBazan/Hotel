@@ -6,11 +6,8 @@ typedef struct
 	int id;
 	char* nombre;
 	char* apellido;
-	char* email;
 	char* cotrasena;
-	int edad;
-	char* sexo;
-	int telefono;
+	char* email;
 
 }Usuario;
 
