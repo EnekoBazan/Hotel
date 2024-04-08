@@ -164,28 +164,37 @@ void iniciarSesionUsuario(sqlite3 *bd) {
 }
 
 void registrarse(sqlite3 *db) {
-    char nombre;
-    char nombreUsuario;
+
+	int id = 05;
+	char nombre;
+    char apellido;
     char contrasena;
-    int numeroTelefono;
-    char direccionResidencia;
+    char email;
+
 
     printf("\n== Registrarse==\n");
     printf("Introduce el nombre :\n");
     fflush(stdout);
     scanf("%s", &nombre);
-    printf("Introduce el nombre de usuario :\n");
+    printf("Introduce el apellido :\n");
     fflush(stdout);
-    scanf("%s", &nombreUsuario);
+    scanf("%s", &apellido);
     printf("Introduce la contrasena:");
     fflush(stdout);
     scanf("%s", &contrasena);
-    printf("Introduce el numero de telefono:");
-    fflush(stdout);
-    scanf("%d", &numeroTelefono);
     printf("Introduce la direccion de residencia:");
     fflush(stdout);
-    scanf("%s", &direccionResidencia);
+    scanf("%s", &email);
+
+    if(anadirUsuario(id, nombre, apellido, contrasena,  email, db)) {
+       printf("Inicio de sesión exitoso!\n");
+       menuPrincipal(db);
+       id++;
+   } else{
+       printf("Nombre de usuario o contraseña incorrectos.\n");
+   }
+
+
 }
 
 void deustoBooking(sqlite3* db) {
@@ -236,43 +245,36 @@ void deustoBooking(sqlite3* db) {
 }
 
 void reservar(sqlite3* bd) {
-    char pais;
-    char hotel;
-    char ciudad;
-    int piso;
-    char tipoHabitacion;
-    char fechaE;
-    char fechaS;
-    int numeroPersonas;
+
+    int id;
+    char nombreHotel;
+    char fechaEntrada;
+    char fechaSalida;
+
 
     printf("== Reservar==\n");
-    printf("Introduce el pais :\n");
+    printf("Introduce el id del hotel :\n");
     fflush(stdout);
-    scanf("%s", &pais);
+    scanf("%d", &id);
     printf("Introduce el nombre del hotel :\n");
     fflush(stdout);
-    scanf("%s", &hotel);
-    printf("Introduce la ciudad:");
-    fflush(stdout);
-    scanf("%s", &ciudad);
-    printf("Introduce el piso:");
-    fflush(stdout);
-    scanf("%d", &piso);
-    printf("Introduce el tipo de habitacion:");
-    fflush(stdout);
-    scanf("%s", &tipoHabitacion);
+    scanf("%s", &nombreHotel);
     printf("Introduce la fecha de entrada:");
     fflush(stdout);
-    scanf("%s", &fechaE);
+    scanf("%s", &fechaEntrada);
     printf("Introduce la fecha de salida:");
     fflush(stdout);
-    scanf("%s", &fechaS);
-    printf("Introduce el numero de personas:");
-    fflush(stdout);
-    scanf("%d", &numeroPersonas);
-    printf("Reserva Realizada\n");
-    fflush(stdout);
-    deustoBooking(bd);
+    scanf("%s", &fechaSalida);
+
+
+    if(anadirReserva(id, nombreHotel, fechaEntrada, fechaSalida, bd)){
+    	printf("Reserva Realizada\n");
+    	deustoBooking(bd);
+    }else{
+    	printf("\nError al cargar las reservas\n");
+    	deustoBooking(bd);
+    }
+
 }
 
 void cancelarReserva(sqlite3 *db) {
@@ -297,13 +299,13 @@ void cancelarHotel(sqlite3 *db) {
     printf("0. Atras \n");
 }
 
-void cancelarUsuario(sqlite3 *db) {
+void cancelarUsuario(sqlite3 *bd) {
     int codigoUsuario;
 
     printf("== Cancelar Usuario==\n");
     printf("Introduce el codigo del usuario :\n");
     fflush(stdout);
     scanf("%d", &codigoUsuario);
-    eliminarUsuario(codigoUsuario, db);
+    eliminarUsuario(codigoUsuario, bd);
     printf("0. Atras \n");
 }
