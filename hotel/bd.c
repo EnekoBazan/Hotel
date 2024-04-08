@@ -13,7 +13,7 @@
 // BD
 sqlite3* cargarBD() {
     sqlite3 *bd;
-    int rc = sqlite3_open("basededatos.db", &bd);
+    int rc = sqlite3_open("basededatos.sqbpro", &bd);
     if (rc != SQLITE_OK) {
         fprintf(stderr, "Error al abrir la base de datos: %s\n", sqlite3_errmsg(bd));
         sqlite3_close(bd);
