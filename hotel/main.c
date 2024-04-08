@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include "admin.c"
 #include "bd.h"
+#include "fichero.h"
 
 // Declaraciones de funciones
 void menuPrincipal(sqlite3 *db);
@@ -20,6 +21,9 @@ int main(void) {
         printf("Error al abrir la base de datos.\n");
         return 1;
     }
+
+    guardarHotelesEnArchivo(db, "hoteles.txt"); // Guardamos los hoteles en un archivo al inicio del programa
+    guardarHabitacionesLibresEnArchivo(db, "habitaciones_libres.txt"); // Guardamos las habitaciones libres de todos los hoteles
 
     menuPrincipal(db); // Pasamos la base de datos a la función del menú principal
 

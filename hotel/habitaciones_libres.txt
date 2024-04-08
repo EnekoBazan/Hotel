@@ -1,0 +1,9 @@
+Hotel ID: 1, Hotel Nombre: individual, Habitación ID: 1, Tipo: 100, Capacidad: 0, Precio: 0.00
+Hotel ID: 2, Hotel Nombre: doble, Habitación ID: 2, Tipo: 200, Capacidad: 0, Precio: 0.00
+Hotel ID: 3, Hotel Nombre: suite, Habitación ID: 2, Tipo: 400, Capacidad: 0, Precio: 0.00
+Hotel ID: 4, Hotel Nombre: suite, Habitación ID: 2, Tipo: 400, Capacidad: 0, Precio: 0.00
+Hotel ID: 5, Hotel Nombre: doble, Habitación ID: 2, Tipo: 200, Capacidad: 0, Precio: 0.00
+Hotel ID: 6, Hotel Nombre: individual, Habitación ID: 1, Tipo: 100, Capacidad: 0, Precio: 0.00
+Hotel ID: 7, Hotel Nombre: individual, Habitación ID: 1, Tipo: 100, Capacidad: 0, Precio: 0.00
+Hotel ID: 8, Hotel Nombre: doble, Habitación ID: 2, Tipo: 200, Capacidad: 0, Precio: 0.00
+Hotel ID: 9, Hotel Nombre: individual, Habitación ID: 1, Tipo: 100, Capacidad: 0, Precio: 0.00

@@ -1,0 +1,5 @@
+ID: 1, Nombre: hotel1, Estrellas: 5, País: España, Ciudad: Madrid
+ID: 2, Nombre: hotel2, Estrellas: 5, País: España, Ciudad: Madrid
+ID: 3, Nombre: hotel3, Estrellas: 5, País: España, Ciudad: Madrid
+ID: 4, Nombre: hotel4, Estrellas: 5, País: España, Ciudad: Madrid
+ID: 5, Nombre: hotel5, Estrellas: 5, País: España, Ciudad: Madrid
