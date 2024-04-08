@@ -5,7 +5,7 @@
 #include "sqlite3.h"
 
 
-void imprimirEmpleadoLargo(Empleado e){
+void imprimirEmpleado(Empleado e){
 	printf("Empleado número %i:\n- Nombre: %s\n- Apellido: %s\n- Salario: %.2f\n- Puesto: %s\n- Telefono: %i\n- Sexo: %s\n- Nombre de usuario: %s\n- Contraseña: %s\n", e.id, e.nombre, e.apellido, e.salario, e.puesto, e.telefono, e.sexo, e.nombreUsuario, e.contrasena);
 }
 
