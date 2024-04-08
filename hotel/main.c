@@ -217,7 +217,7 @@ void deustoBooking(sqlite3* db) {
         	}else {
         		printf("Error al cargar los hoteles\n");
         		deustoBooking(db);
-        		        	}
+        	}
             break;
         case 2:
             reservar(db);
@@ -299,13 +299,13 @@ void cancelarHotel(sqlite3 *db) {
     printf("0. Atras \n");
 }
 
-void cancelarUsuario(sqlite3 *bd) {
+void cancelarUsuario(sqlite3 *db) {
     int codigoUsuario;
 
     printf("== Cancelar Usuario==\n");
     printf("Introduce el codigo del usuario :\n");
     fflush(stdout);
     scanf("%d", &codigoUsuario);
-    eliminarUsuario(codigoUsuario, bd);
+    eliminarUsuario(codigoUsuario, db);
     printf("0. Atras \n");
 }
