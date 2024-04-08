@@ -65,7 +65,7 @@ void iniciarSesionAdmin(sqlite3 *db) {
     char nombreAdmin[50];
     char contrasena[50];
 
-    printf("== Iniciar Sesion administrador ==\n");
+    printf("\n== Iniciar Sesion administrador ==\n");
     printf("Introduce el nombre de administrador: ");
     fflush(stdout);
     scanf("%s", nombreAdmin);
@@ -84,7 +84,7 @@ void iniciarSesionAdmin(sqlite3 *db) {
 void deustoBookingAdmin(sqlite3 *db) {
 	int seleccion;
 
-	    printf("== Deusto Booking==\n");
+	    printf("\n== Deusto Booking==\n");
 	    printf("1-Visualizar hoteles\n");
 	    printf("2-Visualizar usuarios \n");
 	    printf("3-Visualizar reservas\n");
@@ -99,22 +99,28 @@ void deustoBookingAdmin(sqlite3 *db) {
 	        case 1:
 	            if (cargarHoteles(db)){
 	        		printf("Hoteles cargados correctamente\n");
+	        		deustoBookingAdmin(db);
 	            }else {
 	        		printf("Error al cargar los hoteles\n");
+	        		deustoBookingAdmin(db);
 	        	}
 	            break;
 	        case 2:
 	            if(cargarUsuarios(db)) {
 	        		printf("Usuarios cargados correctamente\n");
+	        		deustoBookingAdmin(db);
 	            } else {
 	        		printf("Error al cargar los usuarios\n");
+	        		deustoBookingAdmin(db);
 	            }
 	            break;
 	        case 3:
 	        	if(cargarReservas(db)) {
 	        		printf("Reservas cargadas correctamente\n");
+	        		deustoBookingAdmin(db);
 	        	}else {
 	        		printf("Error al cargar las reservas\n");
+	        		deustoBookingAdmin(db);
 	        	}
 	            break;
 	        case 4:
@@ -132,6 +138,7 @@ void deustoBookingAdmin(sqlite3 *db) {
 	            break;
 	        default:
 	            printf("Opción no válida\n");
+	            deustoBookingAdmin(db);
 	            break;
 	    }
 }
@@ -140,7 +147,7 @@ void iniciarSesionUsuario(sqlite3 *bd) {
     char usuario[50]; // Ajustar el tamaño según la longitud máxima esperada del nombre de usuario
     char contrasena[50]; // Ajustar el tamaño según la longitud máxima esperada de la contraseña
 
-    printf("== Iniciar Sesión usuario ==\n");
+    printf("\n== Iniciar Sesión usuario ==\n");
     printf("Introduce el nombre de usuario: ");
     fflush(stdout);
     scanf("%s", usuario); // Leemos el nombre de usuario
@@ -163,7 +170,7 @@ void registrarse(sqlite3 *db) {
     int numeroTelefono;
     char direccionResidencia;
 
-    printf("== Registrarse==\n");
+    printf("\n== Registrarse==\n");
     printf("Introduce el nombre :\n");
     fflush(stdout);
     scanf("%s", &nombre);
@@ -184,7 +191,7 @@ void registrarse(sqlite3 *db) {
 void deustoBooking(sqlite3* db) {
     int seleccion;
 
-    printf("== Deusto Booking==\n");
+    printf("\n== Deusto Booking==\n");
     printf("1-Buscar Hoteles\n");
     printf("2-Hacer una reserva \n");
     printf("3-Cancelar una reserva \n");
@@ -195,7 +202,13 @@ void deustoBooking(sqlite3* db) {
 
     switch (seleccion) {
         case 1:
-            cargarHoteles(db);
+        	if (cargarHoteles(db)){
+        		printf("Hoteles cargados correctamente\n");
+        		deustoBooking(db);
+        	}else {
+        		printf("Error al cargar los hoteles\n");
+        		deustoBooking(db);
+        		        	}
             break;
         case 2:
             reservar(db);
@@ -205,9 +218,11 @@ void deustoBooking(sqlite3* db) {
             break;
         case 4:
             if(cargarReservas(db)) {
-                printf("Reservas cargadas correctamente\n");
+                printf("\nReservas cargadas correctamente\n");
+                deustoBooking(db);
             }else {
-            	printf("Error al cargar las reservas\n");
+            	printf("\nError al cargar las reservas\n");
+            	deustoBooking(db);
             }
             break;
         case 5:
